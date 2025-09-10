@@ -44,3 +44,11 @@ def add_classes(name, room):
     inserted_id = cursor.lastrowid
     cursor.close()
     return inserted_id
+
+def delete_students(db_connection, name):
+    query = "DELETE FROM students WHERE name = %s"
+    cursor = db_connection.cursor()
+    cursor.execute(query, (name,))
+    db_connection.commit()
+    cursor.close()
+

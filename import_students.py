@@ -12,4 +12,4 @@ import csv
  #   for row in lire_fichier:
   #      print(row)
 
-add_student("yuri","lima","1")
+add_student()
