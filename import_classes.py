@@ -1,7 +1,20 @@
-def add_classes(name, room):
-    query = "INSERT INTO classes (name, room) values (%s, %s)"
-    cursor = db_connection.cursor()
-    cursor.execute(query, (name, room))
-    inserted_id = cursor.lastrowid
-    cursor.close()
-    return inserted_id
+#import database
+import csv
+
+from database import add_classes
+
+# Lire le fichier classes.csv
+# Pour chaque ligne, il faut insére avec add_student(,,)
+
+"""
+with open('csv_fichier/classes.csv', newline='') as csv_classes:
+    lire_fichier = csv.reader(csv_classes, delimiter=';')
+
+    for row in lire_fichier:
+        print(row)
+
+"""
+
+
+
+add_classes("SI-C2b", "C-313")

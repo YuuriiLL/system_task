@@ -1,23 +1,15 @@
-def get_students():
-    query = "SELECT first_name, last_name FROM students"
-    cursor = db_connection.cursor()
-    cursor.execute(query, multi=True)
-    rows = cursor.fetchall()
-    cursor.close()
-    return rows
+from database import *
+import csv
 
-def get_students(id):
-    query = "SELECT first_name, last_name FROM students WHERE id = %s"
-    cursor = db_connection.cursor()
-    cursor.execute(query, (id,))
-    row = cursor.fetchone()
-    cursor.close()
-    return row
 
-def add_students(first_name, last_name, classe_id=1):
-    query = "INSERT INTO students (first_name, last_name, classe_id) values (%s, %s, %s)"
-    cursor = db_connection.cursor()
-    cursor.execute(query, (first_name, last_name, classe_id))
-    inserted_id = cursor.lastrowid
-    cursor.close()
-    return inserted_id
+# Lire le fichier classes.csv
+# Pour chaque ligne, il faut insére avec add_student(,,)
+
+
+#with open('csv_fichier/students.csv', newline='') as csv_students:
+#    lire_fichier = csv.reader(csv_students, delimiter=';')
+
+ #   for row in lire_fichier:
+  #      print(row)
+
+add_student("yuri","lima","1")
