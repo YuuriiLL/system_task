@@ -15,7 +15,7 @@ def get_students(id):
     return row
 
 def add_students(first_name, last_name, classe_id=1):
-    query = "INSERT INTO residents (first_name, last_name, classe_id) values (%s, %s, %s)"
+    query = "INSERT INTO students (first_name, last_name, classe_id) values (%s, %s, %s)"
     cursor = db_connection.cursor()
     cursor.execute(query, (first_name, last_name, classe_id))
     inserted_id = cursor.lastrowid
