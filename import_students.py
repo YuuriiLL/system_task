@@ -31,5 +31,7 @@ with open("csv_fichier/students.csv",encoding='latin-1') as file:
             if error.errno == 1062:
                 print("Doublon de l'élève "+parts[0]+" insertion ignorée")
             else:
-                raise
+                print("Cette ligne pose problème, elle sera ignorée: " + line)
+        except Exception as error:
+            print("Cette ligne pose problème, elle sera ignorée: " + line)
 
